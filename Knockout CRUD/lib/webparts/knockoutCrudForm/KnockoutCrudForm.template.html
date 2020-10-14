@@ -1,0 +1,67 @@
+<div data-bind="attr: { class:knockoutCrudFormClass }">
+  <div data-bind="attr: { class:containerClass }">
+    <div data-bind="attr: { class:rowClass }">
+      <div data-bind="attr: { class:columnClass }">
+        <div data-bind="attr: {class:rowClass}">
+          <div class="ms-Grid-col ms-u-sm3">
+            <span class="ms-font-l ms-fontColor-white ms-fontWeight-semibold">Name</span>
+          </div>
+          <div class="ms-Grid-col  ms-u-sm4">
+            <span class="ms-font-l ms-fontColor-white ms-fontWeight-semibold">Date of Birth</span>
+          </div>
+          <div class="ms-Grid-col  ms-u-sm3">
+            <span class="ms-font-l ms-fontColor-white ms-fontWeight-semibold">Gender</span>
+          </div>
+        </div>
+
+        <!-- ko foreach: lstEmployees -->
+        <div id="GridView" data-bind="attr: {class:$parent.rowClass}">
+          <div class="ms-Grid-col ms-u-sm3">
+            <span class="ms-font-l ms-fontColor-white" data-bind="text: FirstName"></span>
+          </div>
+          <div class="ms-Grid-col  ms-u-sm4">
+            <span class="ms-font-l ms-fontColor-white"
+              data-bind="text: new Date(DOB).getFullYear() + '/' + (new Date(DOB).getMonth()+1) + '/' + new Date(DOB).getDate()"></span>
+          </div>
+          <div class="ms-Grid-col  ms-u-sm3">
+            <span class="ms-font-l ms-fontColor-white" data-bind="text: (Gender == 'Select' ? '-' : Gender) "></span>
+          </div>
+          <div class="ms-Grid-col  ms-u-sm1">
+            <i class="ms-Icon ms-Icon--Edit" aria-hidden="true"
+              data-bind="click: $parent.editItem.bind($parent, $data)"></i>
+          </div>
+          <div class="ms-Grid-col  ms-u-sm1">
+            <i class="ms-Icon ms-Icon--Delete" aria-hidden="true"
+              data-bind="click: $parent.deleteItem.bind($parent, $data)"></i>
+          </div>
+        </div>
+        <!-- /ko -->
+
+        <div data-bind="attr: {class:rowClass}">
+          <div class="ms-Grid-col  ms-u-sm12">
+            <span class="ms-font-l ms-fontColor-white ms-fontWeight-semibold">Add New</span>
+          </div>
+        </div>
+        <div data-bind="attr: {class:rowClass}">
+          <form data-bind="submit: addItem">
+            <div>
+              Name: <input placeholder="Name" data-bind='value: firstname, valueUpdate: "afterkeydown"' />
+            </div><br>
+            <div>
+              Date of Birth: <input placeholder="Date of Birth" type="date"
+                data-bind='value: dob, valueUpdate: "afterkeydown"' />
+            </div><br>
+            <div>
+              Gender: <select data-bind="options: availableGenders ,value:gender"
+                style="background-color: white;"></select>
+            </div><br>
+            <div>
+              <button class="ms-Button--default ms-Button" type="submit" id="btnAddId"
+                data-bind="enable: (firstname().length > 0)">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

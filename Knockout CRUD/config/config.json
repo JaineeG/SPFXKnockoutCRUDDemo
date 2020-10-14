@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "knockout-crud-form-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/knockoutCrudForm/KnockoutCrudFormWebPart.js",
+          "manifest": "./src/webparts/knockoutCrudForm/KnockoutCrudFormWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "KnockoutCrudFormWebPartStrings": "lib/webparts/knockoutCrudForm/loc/{locale}.js"
+  }
+}

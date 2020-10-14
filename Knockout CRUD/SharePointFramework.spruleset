@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<SPCAFSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="SharePoint Framework - All Rules" Description="Use this ruleset to run analysis on SharePoint Framework projects only.">
+  <Properties>
+    <Property Key="ApprovedScriptLocations" Value="https://cdn.rencore.com/" />
+    <Property Key="ApprovedSourceLocations" Value="https://cdn.rencore.com/" />
+    <Property Key="IgnoredFiles" Value="/node_modules/;gulpfile.js" />
+  </Properties>
+  <Analyzers>
+    <Analyzer Name="Rencore.Analyzers.Assemblies.Rules.CSOM" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.Integration.CATNET" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.Integration.CSSLint" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.Integration.FxCop" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.Integration.FxCopMetrics" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.Integration.JSHint" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.JavaScript.Rules" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.Powershell.Rules" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.SPAddins.Dependencies" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.SPAddins.Inventory" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.SPAddins.Metrics" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.SPAddins.Rules" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.WSP.Dependencies" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.WSP.Inventory" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.WSP.Metrics" Disabled="true" />
+    <Analyzer Name="Rencore.Analyzers.WSP.Rules" Disabled="true" />
+  </Analyzers>
+</SPCAFSettings>
